@@ -124,7 +124,7 @@ class GSGUiManager:
         col = data[6:10]
         for p , j in enumerate(pos):
             if j == -1:
-                pos[p] = self.widget_data[WidgetDataType.POSITION][i * 4 + p]
+                pos[p] = self.widget_data[WidgetDataType.POSITION][i * 6 + p]
         for p , j in enumerate(col):
             if j == -1:
                 col[p] = self.widget_data[WidgetDataType.COLOUR][i * 4 + p]
