@@ -255,15 +255,15 @@ public:
                     next_token();
                 }
             }
-            else if (peek_token() == '"'){
-                next_token();
+            else if (peek_token() == '"' || peek_token() == '''){
+                char start_qoute = next_token();
                 token tok;
                 tok.type = TokenType::STRING;
                 bool is_string_end = false;
                 std::string string_literal_value = std::string();
                 while (!is_string_end && !eof()){
                     char c = peek_token();
-                    if (c == '"'){
+                    if (c == start_qoute){
                         is_string_end = true;
                     }
                     else{
